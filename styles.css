@@ -1,0 +1,56 @@
+:root {
+    --primary-color: #ff9292;
+    --input-color: #2c2a30;
+    --bg-color: #1b1a1d;
+    --element-color: #111113;
+
+    --main-width: 650px;
+}
+
+
+body, html {
+    background-color: var(--bg-color);
+    color: #dcd4df;
+}
+body, html * {
+    border-radius: 3px;
+    color: inherit;
+}
+
+p {
+    margin: 0px;
+}
+
+textarea {
+    max-width: 95%;
+    width: var(--main-width);
+    background-color: var(--input-color);
+    border: none;
+    font-size: large;
+}
+textarea:focus {
+    outline: var(--primary-color) 3px solid;
+}
+
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.output_cont {
+    width: var(--main-width);
+    height: fit-content;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 15px 0px;
+}
+
+.output_item {
+    background-color: var(--element-color);
+    padding: 5px;
+    font-size: large;
+    width: fit-content;
+}
