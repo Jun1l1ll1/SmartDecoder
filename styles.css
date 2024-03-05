@@ -22,7 +22,8 @@ p {
 }
 
 textarea {
-    max-width: 95%;
+    max-width: min(95%, var(--main-width));
+    min-width: min(95%, var(--main-width));
     width: var(--main-width);
     background-color: var(--input-color);
     border: none;
@@ -40,7 +41,7 @@ textarea:focus {
 }
 
 
-.output_cont {
+#output_cont {
     width: var(--main-width);
     height: fit-content;
     display: grid;
