@@ -1,8 +1,14 @@
 :root {
-    --primary-color: #ff9292;
+    --primary-color: #007c5d;
+    --white-color: #dcd4df;
     --input-color: #2c2a30;
     --bg-color: #1b1a1d;
     --element-color: #111113;
+
+    --very-accurate: #003f2f;
+    --bit-accurate: #334d12;
+    --meh-accurate: #523107;
+    --not-accurate: #521212;
 
     --main-width: 650px;
 }
@@ -10,11 +16,12 @@
 
 body, html {
     background-color: var(--bg-color);
-    color: #dcd4df;
+    color: var(--white-color);
 }
 body, html * {
     border-radius: 3px;
     color: inherit;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 p {
@@ -33,6 +40,17 @@ textarea:focus {
     outline: var(--primary-color) 3px solid;
 }
 
+button {
+    border: none;
+    font-size: large;
+    background-color: var(--primary-color);
+    font-weight: bold;
+    padding: 7px;
+}
+button:active {
+    background-color: var(--white-color);
+}
+
 
 .center {
     display: flex;
@@ -41,8 +59,21 @@ textarea:focus {
 }
 
 
+#prompt_cont {
+    margin-bottom: 30px; 
+    width: var(--main-width);
+    max-width: 95%;
+}
+.prompt {
+    font-size: large;
+    background-color: var(--element-color);
+    padding: 5px;
+}
+
+
 #output_cont {
     width: var(--main-width);
+    max-width: 95%;
     height: fit-content;
     display: grid;
     grid-template-columns: auto;
@@ -52,6 +83,24 @@ textarea:focus {
 .output_item {
     background-color: var(--element-color);
     padding: 5px;
-    font-size: large;
     width: fit-content;
+}
+.output_item p:not(.solution) {
+    opacity: .6;
+}
+.output_item p.solution {
+    font-size: large;
+}
+
+.output_item.very_accurate {
+    background-color: var(--very-accurate);
+}
+.output_item.bit_accurate {
+    background-color: var(--bit-accurate);
+}
+.output_item.meh_accurate {
+    background-color: var(--meh-accurate);
+}
+.output_item.not_accurate {
+    background-color: var(--not-accurate);
 }
