@@ -51,11 +51,44 @@ button:active {
     background-color: var(--white-color);
 }
 
+input[type=checkbox] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0px;
+    +label {
+        padding-left: 3px;
+        padding-right: 3px;
+        border-radius: 3px;
+        border: 2px solid var(--input-color);
+    }
+}
+input[type=checkbox]:checked +label {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 
 .center {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+
+.lang_select {
+    margin-bottom: 30px; 
+    width: var(--main-width);
+}
+.lang_note {
+    font-size: small; 
+    opacity: .6;
+}
+
+.lang_select:has(div #en:not(:checked)) #en_note {
+    display: none;
+}
+.lang_select:has(div #no:not(:checked)) #no_note {
+    display: none;
 }
 
 
@@ -103,4 +136,9 @@ button:active {
 }
 .output_item.not_accurate {
     background-color: var(--not-accurate);
+}
+
+
+.disappear {
+    visibility: hidden;
 }

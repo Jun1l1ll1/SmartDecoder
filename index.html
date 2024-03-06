@@ -2,11 +2,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body class="center">
     <h1>Hello world</h1>
+
+    <div class="lang_select">
+        <p>Supported languages</p>
+        <div style="margin-bottom: 5px; margin-top: 5px;">
+            <input type="checkbox" id="en" name="filter_inputs" value="en" checked />
+            <label for="en">English</label>
+        
+            <input type="checkbox" id="no" name="filter_inputs" value="no" />
+            <label for="no">Norwegian</label>
+        </div>
+        <p id="en_note" class="lang_note">*Uses english dictionary to minimize API requests</p>
+        <p id="no_note" class="lang_note">*Tries æøå in alphabeth when shifting</p>
+    </div>
+
     <textarea name="code_input" id="code_input" rows="10" placeholder="Input the encoded text here"></textarea>
 
     <button id="decode_btn" style="margin: 40px;">Decode</button>
@@ -15,5 +30,6 @@
     <div id="prompt_cont"> <!-- Prompt is added here from decoder.js --> </div>
     <div id="output_cont"> <!-- Outputs is added here from decoder.js --> </div>
 </body>
+<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 <script src="decoder.js" type="module"></script>
 </html>
